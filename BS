@@ -1,0 +1,23 @@
+#include <iostream>//input output library
+#include <cmath>	//including math library
+using namespace std;
+
+double value(double x)//assigning the function 'value' double 
+{
+	return 2 * sin(x) - (pow(x, 2) / 10);//Equation given in question
+}
+int main()								//main function starts
+{
+	double x1 = 0; //start value
+	double x2 = 4;//end value
+	double x3 = 0.01;//provided maximum error
+	double A = ((value(x3) - value(x2)) / ((x3 - x2)*(x3 - x1))) - ((value(x1) - value(x2)) / ((x1 - x2)*(x3 - x1)));//formula
+	double B = (A*((pow(x2, 2)) - (pow(x1, 2))) - (value(x1) - value(x2))) / (x1 - x2);
+	double C = (value(x1) - (A*(pow(x1, 2))) - (B*x1)); // equations to evluate 
+	double minimum = -(B / (2 * A)); // value of miniml
+	cout << endl;
+	cout << endl << endl << "first value " << minimum << endl;
+	cout << endl << endl << "Brent’s methodf(0,2,4,0.01) = " << "value(minimum)" << endl << endl;
+	system("pause");
+	return 0;
+}
