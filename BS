@@ -3,6 +3,7 @@
 using namespace std;
 
 double value(double x)//assigning the function 'value' double 
+
 {
 	return 2 * sin(x) - (pow(x, 2) / 10);//Equation given in question
 }
